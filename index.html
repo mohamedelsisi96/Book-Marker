@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omar El-sisi</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="./imgs/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+  <div class="container py-5">
+    <h2 class="text-center mb-5 px-2 head mx-auto ">Bookmarker</h2>
+    <div class="py-3">
+    
+    <h2 class="text-center pb-5 h3"><i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i class="fa-solid fa-bookmark"></i></h2>
+    <label class="mb-2" for="siteName"><i class="fa-solid fa-book-bookmark pe-2"></i> Site Name</label>
+    <input class="form-control p-2 mb-3" type="text" placeholder="Enter Site Name " id="siteName" oninput="validePName()">
+    <small id="errorName" class="mb-2 ms-2 d-none" >Product Name must start with capitel letter and have at lest 4 char</small>
+    <label class="mb-2" for="siteUrl"><i class="fa-solid fa-link pe-2"></i> Site Url</label>
+    <input class="form-control p-2 mb-3" type="text" placeholder="Enter Site Url " id="siteUrl" oninput="valideUrl()">
+    <small id="para" class="d-none h6">the url is false</small>
+      <!-- <h3 id="validmsg" class="text-center pb-5 h6">please enter valide Bookmarker and url</h3> -->
+      <h3 id="validmsg" class="text-center pb-5 h6">please enter valide Bookmarker and url</h3>
+      <button type="button" class="btn btn-success px-4 text-center mx-auto" onclick="addUrl()">Add</button>
+    </div>
+      <h2 class="text-center py-5">My Site</h2>
+    <table class="w-100 table table-success text-center">
+      <thead class="table-primary py-5" >
+          <tr >
+            <th class="h6">index</th>
+            <th class="text-wrap h6">Website Name</th>
+            <th class="h6">Visit</th>
+            <th class="h6">Delete </th>
+        </tr>
+      </thead>
+      <tbody id="productUrl">
+     
+
+      </tbody>
+    
+
+    </table>
+  </div>
+  <!--  para.classList.replace("d-none","d-d-block") 
+   -->
+  
+  <script src="js/all.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/index.js"></script>
+
+
+</body>
+</html>
