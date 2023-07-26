@@ -36,21 +36,27 @@ function valideUrl() {
 }
 siteUrl.addEventListener("input",valideUrl)
 function addUrl() {
-    if ( validePName()===true && valideUrl()===true ){
-                validmsg.style.display="none"
-                var urlObj={
-                    urlName:siteName.value,
-                    urlSite:siteUrl.value,
-                }
-                urlArr.push(urlObj)
-                clearForm()
-                addToForm()
-                window.localStorage.setItem("data", JSON.stringify (urlArr))
+    if (isExist(siteName.value,urlArr)){
+        window.alert("the book mark is repeted")
+    } else{
+         
+        if ( validePName()===true && valideUrl()===true ){
+            validmsg.style.display="none"
+            var urlObj={
+                urlName:siteName.value,
+                urlSite:siteUrl.value,
+            }
+            urlArr.push(urlObj)
+            clearForm()
+            addToForm()
+            window.localStorage.setItem("data", JSON.stringify (urlArr))
+}
+else{
+    validmsg.style.display="block"
+    
+}
     }
-    else{
-        validmsg.style.display="block"
-        
-    }
+ 
 }
 function clearForm() {
     siteName.value="";
@@ -74,5 +80,14 @@ function deletUrl(delItemUrl) {
 window.localStorage.setItem("data",JSON.stringify(urlArr))
 addToForm()
 }
-
+function isExist(bookName,bookArr) {
+    for(var i=0;i<bookArr.length;i++){
+        if( bookArr[i]!=bookName){
+            return true
+        }
+            return false
+        
+    }
+    
+}
 
